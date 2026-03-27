@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Urban Height AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🏙️ Urban Height AI – Multi-Sensor Fusion</h1>
+
+<div class="upload-section">
+    <div>
+        <h3>SAR Image</h3>
+        <input type="file" id="sarInput">
+        <img id="sarPreview">
+    </div>
+
+    <div>
+        <h3>Optical Image</h3>
+        <input type="file" id="opticalInput">
+        <img id="opticalPreview">
+    </div>
+</div>
+
+<h2>Click on Optical Image to Select Buildings</h2>
+<canvas id="canvas"></canvas>
+
+<br>
+<button onclick="estimateHeights()">Estimate Heights</button>
+
+<h2>Results</h2>
+<table id="resultTable">
+    <tr>
+        <th>Building</th>
+        <th>Predicted Height (m)</th>
+        <th>Actual Height (m)</th>
+        <th>Error</th>
+    </tr>
+</table>
+
+<h2>Metrics</h2>
+<p id="metrics"></p>
+
+<canvas id="chart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
