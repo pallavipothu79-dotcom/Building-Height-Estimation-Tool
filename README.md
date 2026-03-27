@@ -1,5 +1,5 @@
 
-# 🛰️ Urban Height AI – Multi-Sensor Fusion
+# Building Height Estimation Tool
 
 Urban Height AI is a simple web application that estimates **building heights** using **SAR (Synthetic Aperture Radar) and Optical satellite images**.
 The project demonstrates the concept of **Multi-Sensor Fusion**, where two types of satellite data are combined to estimate urban building heights.
