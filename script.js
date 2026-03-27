@@ -1,6 +1,6 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
-
+let chartInstance = null;
 let points = [];
 let opticalImage = new Image();
 // SAR IMAGE PREVIEW
@@ -142,10 +142,18 @@ function calculateMetrics(pred, act) {
 
 // Chart
 function drawChart(pred, act) {
-    new Chart(document.getElementById("chart"), {
+
+    const ctx = document.getElementById("chart").getContext("2d");
+
+    // Destroy old chart
+    if (chartInstance !== null) {
+        chartInstance.destroy();
+    }
+
+    chartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: pred.map((_, i) => "B" + (i+1)),
+            labels: pred.map((_, i) => "B" + (i + 1)),
             datasets: [
                 {
                     label: "Predicted",
@@ -156,6 +164,9 @@ function drawChart(pred, act) {
                     data: act
                 }
             ]
+        },
+        options: {
+            responsive: true
         }
     });
 }
